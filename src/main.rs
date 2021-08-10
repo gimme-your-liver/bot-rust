@@ -1,15 +1,29 @@
 #![allow(dead_code)]
 use gtts::save_to_file;
 use rand::seq::SliceRandom;
+use serde::Deserialize;
 use std::io;
 use std::io::BufReader;
 use std::path::Path;
 
-mod chat;
+// mod chat;
+
+#[derive(Deserialize)]
+struct Responses {
+    greetings: Vec<String>,
+    hi_msg: Vec<String>,
+    hi_rply: Vec<String>,
+    bye_msg: Vec<String>,
+    bye_rply: Vec<String>,
+    yes_msg: Vec<String>,
+    yes_rply: Vec<String>,
+    nice_msg: Vec<String>,
+    nice_rply: Vec<String>,
+}
 
 // prompt function
 pub fn readline(msg: &str) -> String {
-    println!("{}", msg);
+    print!("{}", msg);
 
     let mut user_input = String::new();
     io::stdin().read_line(&mut user_input).unwrap();
@@ -46,9 +60,13 @@ fn tts(input: &str) {
 }
 // Main Function::true
 fn main() {
+    // debug
+    let data = include_str!("text.json");
+    let responses: Responses = serde_json::from_str(data).unwrap();
+    // ---------------
     welcome();
-    
-    let greet_choice = chat::GREET_STAN.choose(&mut rand::thread_rng()).unwrap();
+
+    let greet_choice = responses.greetings.choose(&mut rand::thread_rng()).unwrap();
     // debug
 
     println!("{}", greet_choice);
@@ -61,23 +79,29 @@ fn main() {
             println!("This is in progress");
             tts("Sorry I did not understand what you said.");
         };
-        if chat::HI_MSG.contains(&inp.trim()) {
-            let message = chat::HI_RPLY.choose(&mut rand::thread_rng()).unwrap();
+        if responses.hi_msg.contains(&inp.trim().to_owned()) {
+            let message = responses.hi_rply.choose(&mut rand::thread_rng()).unwrap();
             println!("{}", message);
             tts(&message);
         };
-        if  chat::BYE_MSG.contains(&inp.trim()) {
-            let message = chat::BYE_RPLY.choose(&mut rand::thread_rng()).unwrap();
+        if responses.bye_msg.contains(&inp.trim().to_owned()) {
+            let message = responses.bye_rply.choose(&mut rand::thread_rng()).unwrap();
             println!("{}", message);
             tts(&message);
         };
-        if chat::YES_MSG.contains(&inp.trim()) {
-            let message = chat::YES_RPLY.choose(&mut rand::thread_rng()).unwrap();
+        if responses.yes_msg.contains(&inp.trim().to_owned()) {
+            let message = responses.yes_rply.choose(&mut rand::thread_rng()).unwrap();
+            println!("{}", message);
+            tts(&message);
+        };
+        if responses.nice_msg.contains(&inp.trim().to_owned()) {
+            let message = responses.nice_rply.choose(&mut rand::thread_rng()).unwrap();
             println!("{}", message);
             tts(&message);
         };
         if inp.trim() == "why" {
             println!("Oh did I do somehing wrong! sorry!");
-        }
+        };
+
     }
 }

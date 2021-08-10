@@ -1,0 +1,90 @@
+{
+  "greetings": [
+    "How may I help you?",
+    "hey! lemme help you, whats going on?",
+    "yo! whats up! any help needed?"
+  ],
+  "hi_msg": ["hi", "hi!"],
+  "hi_rply": ["hello!!",
+  "hi!",
+  "yo!"],
+  "bye_msg": [
+    "bye",
+    "goodbye",
+    "bye!",
+    "goodbye!",
+    "sayonara",
+    "sayonara!",
+    "cya",
+    "cya!",
+    "!bye",
+    "gtg",
+    "I gtg",
+    "sorry have to go",
+    ":( bye",
+    "bye :(",
+    "gotta go",
+    "oops gtg",
+    "see ya",
+    "noo i gtg",
+    "f gtg",
+    "lol gtg",
+    "bye gyl",
+    "bye gyl!",
+    "bye gimme your liver",
+    "bye gimme your liver!"
+],
+"bye_rply": [
+  "Sad to hear that, bye!",
+  "Bye!",
+  "No problem!",
+  "no worries!",
+  "its ok! bye!",
+  "see ya!"
+],
+"yes_msg": [
+  "yes",
+  "yes!",
+  "yessir",
+  "yes indeed",
+  "yup",
+  "yeah!",
+  "yeah",
+  "yess",
+  "ya",
+  "haan",
+  "yes dude",
+  "oh yeah",
+  "oh yea"
+],
+"yes_rply": [
+  "okay!",
+  "ok",
+  "hmmmmm... ok!",
+  "yes??",
+  "yup.",
+  "hmmm!",
+  "indeed!",
+  "yea"
+],
+"nice_msg":[
+  "nice",
+  "nice!",
+  "epic",
+  "wow",
+  "legendary",
+  "extraodinary",
+  "woow!",
+  "cool",
+  "sick",
+  "so nice",
+  "so epic"
+],
+"nice_rply": [
+  "thanks!",
+  "thank you so much!",
+  "yay! thanks",
+  "yay! thank you! smiley face"
+]
+
+}
