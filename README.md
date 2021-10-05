@@ -1,4 +1,5 @@
-<h1 style=text-align:center;>Gimme-your-liver Rust</h1> in `rust`
-Same description, but made with rust.(`ofc`)
+<h1 align=center>Gimme-your-liver</h1>
 
-### Same, In construction!
+Same description, but made with rust
+
+### Same, Work in progress!
